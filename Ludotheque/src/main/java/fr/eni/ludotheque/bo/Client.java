@@ -2,26 +2,16 @@ package fr.eni.ludotheque.bo;
 
 import java.util.Objects;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
+
 
 public class Client {	
 	private Integer noClient;
-	@NotBlank
 	private String nom;
-	@NotBlank
 	private String prenom;
-	@Email
-	@NotBlank
 	private String email;
-	
 	private String noTelephone;
-	@NotBlank
 	private String rue;
-	@NotBlank
 	private String codePostal;
-	@NotBlank
 	private String ville;
 	
 	public Client() {

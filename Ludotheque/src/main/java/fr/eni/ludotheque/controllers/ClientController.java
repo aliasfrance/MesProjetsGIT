@@ -23,11 +23,11 @@ public class ClientController {
 
     private ClientService clientService;
 
-    ClientController(ClientService clientService) {
-        this.clientService = clientService;
-    }
+    public ClientController(ClientService clientService) {
+		this.clientService = clientService;
+	}
 
-    /*
+	/*
      * Afficher la liste des clients 
      */
     @GetMapping()
