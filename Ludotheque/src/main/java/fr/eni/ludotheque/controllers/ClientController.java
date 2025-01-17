@@ -21,60 +21,66 @@ import jakarta.validation.Valid;
 @RequestMapping("/clients")
 public class ClientController {
 
-    private ClientService clientService;
+	private ClientService clientService;
 
-    public ClientController(ClientService clientService) {
+	public ClientController(ClientService clientService) {
 		this.clientService = clientService;
+
 	}
 
 	/*
-     * Afficher la liste des clients 
-     */
-    @GetMapping()
-    public String clients(Model model) {
-        List<Client> clients = clientService.getAll();
-        model.addAttribute("clients", clients);
-        model.addAttribute("body", "pages/clients/clients");
-        return "index";
-    }
+	 * Ajouter un client 
+	 */
 
-    @GetMapping("/ajouter")
-    public String pageAjouterClient(Model model) {
-        model.addAttribute("client", new Client());
-        model.addAttribute("body", "pages/clients/formulaire-client");
-        return "index";
-    }
+	@GetMapping("/ajouter")
+	public String pageAjouterClient(Model model) {
+		model.addAttribute("client", new Client());
+		model.addAttribute("body", "pages/clients/formulaire-client");
+		return "index";
+	}
 
-    @PostMapping("/enregistrer")
-    public String ajouterClient(Model model, 
-    		@Valid @ModelAttribute("client") Client client,
-    		BindingResult resultatValidation) {
-    	if(resultatValidation.hasErrors()) {
-    		model.addAttribute("body", "pages/clients/formulaire-client");
-            return "index"; 
-    	}
-        clientService.save(client);
-        return "redirect:/clients";
-    }
+	/*
+	 * Afficher la liste des clients 
+	 */
+	@GetMapping()
+	public String clients(Model model) {
+		List<Client> clients = clientService.getAll();
+		model.addAttribute("clients", clients);
+		model.addAttribute("body", "pages/clients/clients");
+		return "index";
+	}
 
-    @GetMapping("/modifier")
-    public String getModifierClient(Model model, @RequestParam("noClient") int noClient) {
-        Optional<Client> clientOpt = clientService.getById(noClient);
-        if (clientOpt.isPresent()) {
-            model.addAttribute("client", clientOpt.get());
-            model.addAttribute("body", "pages/clients/formulaire-client");
 
-        } else {
-        	//TODO : gestion erreur
-            model.addAttribute("body", "pages/clients/clients");
-        }
-        return "index";
-    }
+	@GetMapping("/modifier")
+	public String getModifierClient(Model model, @RequestParam("noClient") int noClient) {
+		Optional<Client> clientOpt = clientService.getById(noClient);
+		if (clientOpt.isPresent()) {
+			model.addAttribute("client", clientOpt.get());
+			model.addAttribute("body", "pages/clients/formulaire-client");
 
-    @GetMapping("/supprimer/{id}")
-    public String supprimerClient(Model model, @PathVariable("id") int id) {
-        clientService.delete(id);
-        //model.addAttribute("body", "pages/clients/clients");
-        return "redirect:/clients";
-    }
+		} else {
+			//TODO : gestion erreur
+			model.addAttribute("body", "pages/clients/clients");
+		}
+		return "index";
+	}
+
+	@GetMapping("/supprimer/{id}")
+	public String supprimerClient(Model model, @PathVariable("id") int id) {
+		clientService.delete(id);
+		//model.addAttribute("body", "pages/clients/clients");
+		return "redirect:/clients";
+	}
+
+	@PostMapping("/enregistrer")
+	public String ajouterClient(Model model, 
+			@Valid @ModelAttribute("client") Client client,
+			BindingResult resultatValidation) {
+		if(resultatValidation.hasErrors()) {
+			model.addAttribute("body", "pages/clients/formulaire-client");
+			return "index"; 
+		}
+		clientService.save(client);
+		return "redirect:/clients";
+	}
 }
