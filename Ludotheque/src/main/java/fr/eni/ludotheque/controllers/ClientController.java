@@ -21,6 +21,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/clients")
 public class ClientController {
 
+	//injection de dependance du client service
     private ClientService clientService;
 
     public ClientController(ClientService clientService) {
