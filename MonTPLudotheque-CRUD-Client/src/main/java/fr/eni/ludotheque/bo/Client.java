@@ -3,6 +3,7 @@ package fr.eni.ludotheque.bo;
 import java.util.Objects;
 
 
+
 public class Client {	
 	private Integer noClient;
 	private String nom;
