@@ -5,7 +5,9 @@
 	<th:block th:unless="${client.noClient != null }">	
     <h2>Ajouter un client</h2>
 	</th:block>
-    <form action="/clients/enregistrer" method="post" th:object="${client}">
+	
+	// mettre le th:action pour se protéger d'une redirection de page
+    <form th:action="@/clients/enregistrer" method="post" th:object="${client}">
 
 	<div style="color: red;" th:if="${#fields.hasErrors('*')}" >
 		<p th:text="#{index.erreurs}">Message d'erreur</p>

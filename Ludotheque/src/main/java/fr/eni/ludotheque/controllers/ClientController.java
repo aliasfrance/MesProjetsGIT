@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import fr.eni.ludotheque.bo.Client;
 import fr.eni.ludotheque.services.ClientService;
@@ -78,4 +79,20 @@ public class ClientController {
         //model.addAttribute("body", "pages/clients/clients");
         return "redirect:/clients";
     }
+    
+    //Affichage d'une stack trace 
+    @RestController
+    public class TestController {
+
+        @GetMapping("/test-error")
+        public String testError() {
+            try {
+                throw new RuntimeException("Test exception for stack trace");
+            } catch (RuntimeException e) {
+                e.printStackTrace(); // Affiche la stack trace dans la console
+                throw e; // Relance l'exception pour qu'elle soit également gérée par Spring Boot
+            }
+        }
+    }
+
 }

@@ -32,10 +32,15 @@ dependencies {
 	
 	
 	
-	//implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	//  Temporary explicit version to fix Thymeleaf bug
-	//implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.2.RELEASE'
-	//testImplementation 'org.springframework.security:spring-security-test'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.2.RELEASE'
+	testImplementation 'org.springframework.security:spring-security-test'
+	
+	// Affiche une stack trace dans la console
+	logging.level.org.springframework=DEBUG
+	logging.level.your.package.name=DEBUG
+	
 }
 
 tasks.named('test') {

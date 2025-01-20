@@ -19,18 +19,6 @@ import fr.eni.ludotheque.bo.Client;
 
 @Repository
 public class ClientRepositoryImpl implements ClientRepository {
-
-	//Autowired
-	//private static int idxClient = 1;
-	
-	//@Autowired
-	//public ClientRepositoryImpl() {
-		
-		
-	//this.clients = new ArrayList<Client>();
-		
-	//private List<Client> clients;
-	
 	
 	//JdbcTemplate pour exécuter les requêtes SQL
 	@Autowired
