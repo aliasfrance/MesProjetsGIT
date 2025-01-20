@@ -19,4 +19,4 @@ insert into client (id,nom, prenom,email, no_tel, rue, code_postal, ville)
 values (1, 'Durand', 'Juliette', 'oeu@gmail.com', '0256897840','Impasse Laurie', '44800', 'Saint-Herblain' );	
 
 
-select * from client;
+select * from client

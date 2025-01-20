@@ -27,22 +27,7 @@ public class ClientController {
     public ClientController(ClientService clientService) {
 		this.clientService = clientService;
 	}
-    
-    /*
-     * Ajouter un client : 
-     */
-    @PostMapping("/enregistrer")
-    public String ajouterClient(Model model, 
-    		@Valid @ModelAttribute("client") Client client,
-    		BindingResult resultatValidation) {
-    	if(resultatValidation.hasErrors()) {
-    		model.addAttribute("body", "pages/clients/formulaire-client");
-            return "index"; 
-    	}
-        clientService.save(client);// Appel au service pour enregistrer le client
-        return "redirect:/clients";// 
-    }
-    
+
 	/*
      * Afficher la liste des clients 
      */
@@ -61,10 +46,18 @@ public class ClientController {
         return "index";
     }
 
-    
-    /*
-     * Afficher le détail d'un seul client
-     */
+    @PostMapping("/enregistrer")
+    public String ajouterClient(Model model, 
+    		@Valid @ModelAttribute("client") Client client,
+    		BindingResult resultatValidation) {
+    	if(resultatValidation.hasErrors()) {
+    		model.addAttribute("body", "pages/clients/formulaire-client");
+            return "index"; 
+    	}
+        clientService.save(client);
+        return "redirect:/clients";
+    }
+
     @GetMapping("/modifier")
     public String getModifierClient(Model model, @RequestParam("noClient") int noClient) {
         Optional<Client> clientOpt = clientService.getById(noClient);
