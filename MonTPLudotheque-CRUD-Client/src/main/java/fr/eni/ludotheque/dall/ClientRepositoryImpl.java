@@ -38,10 +38,10 @@ public class ClientRepositoryImpl implements ClientRepository {
 	
 	@Override
 	public void add(Client unClient) {
-		idxClient++;  // Incrémenter l'ID
-		unClient.setNoClient(idxClient);// Assigner un ID au client
+		idxClient++;
+		unClient.setNoClient(idxClient);
 		System.out.println(unClient);
-		this.clients.add(unClient);// Ajouter le client à la liste
+		this.clients.add(unClient);
 		
 	}
 

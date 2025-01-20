@@ -28,8 +28,6 @@ public class ClientController {
 		this.clientService = clientService;
 	}
     
-    
-    
     /*
      * Ajouter un client : 
      */
@@ -41,11 +39,10 @@ public class ClientController {
     		model.addAttribute("body", "pages/clients/formulaire-client");
             return "index"; 
     	}
-        clientService.save(client);
-        return "redirect:/clients";
+        clientService.save(client);// Appel au service pour enregistrer le client
+        return "redirect:/clients";// 
     }
     
-
 	/*
      * Afficher la liste des clients 
      */
