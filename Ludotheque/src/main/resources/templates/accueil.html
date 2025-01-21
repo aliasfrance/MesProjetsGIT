@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Ludothèque</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 2rem;
+        }
+        main section {
+            margin-bottom: 2rem;
+        }
+        main section h2 {
+            color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            background-color: #ddd;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenue à la Ludothèque</h1>
+        <nav>
+            <ul>
+                <li><a href="/jeux">Catalogue des Jeux</a></li>
+                <li><a href="/compte">Mon Compte</a></li>
+                <li><a href="/logout">Se Déconnecter</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Dernières Nouvelles</h2>
+            <p>Découvrez nos nouveaux jeux et événements à venir !</p>
+        </section>
+        
+        <section>
+            <h2>Options</h2>
+            <ul>
+                <li><a href="/jeux">Rechercher un jeu</a></li>
+                <li><a href="/reservation">Mes réservations</a></li>
+                <li><a href="/aide">Besoin d'aide ?</a></li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Ludothèque. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

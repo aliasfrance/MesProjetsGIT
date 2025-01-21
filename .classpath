@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="fr/eni/ludotheque/bll/" kind="src" path="Ludotheque/src/main/java"/>
+	<classpathentry kind="src" path="Ludotheque/src/main/java/fr/eni/ludotheque/bll"/>
+	<classpathentry kind="src" path="Ludotheque/src/test/java"/>
+	<classpathentry excluding="fr/eni/ludotheque/bll/" kind="src" path="MonTPLudotheque-CRUD-Client/src/main/java"/>
+	<classpathentry kind="src" path="MonTPLudotheque-CRUD-Client/src/main/java/fr/eni/ludotheque/bll"/>
+	<classpathentry kind="src" path="MonTPLudotheque-CRUD-Client/src/test/java"/>
+	<classpathentry kind="lib" path="Ludotheque/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="MonTPLudotheque-CRUD-Client/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="output" path="Ludotheque/bin/main"/>
+</classpath>

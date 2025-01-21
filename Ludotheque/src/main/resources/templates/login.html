@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
     <head>
-        <title>Page Login</title>
+        <title>Page de Login</title>
     </head>
     <body>
         <!-- Message d'erreur de connexion : Affiche un message d'erreur si l'authentification échoue -->
@@ -18,12 +18,12 @@
         
        <!-- Affichage du nom de l'utilisateur connecté -->
         <!-- Utilise Spring Security avec Thymeleaf pour afficher le nom de l'utilisateur authentifié -->
-        <h1 th:inline="text">Hello<span th:remove="tag" sec:authentication="name">thymeleaf</span>!</h1>
+        <h1 th:inline="text">Bienvenue ! <span th:remove="tag" sec:authentication="name">thymeleaf</span>!</h1>
 
        
         <!-- Formulaire de déconnexion : Permet à l'utilisateur de se déconnecter -->
         <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
+            <input type="submit" value="Se déconnecter"/>
         </form>
             
      <!-- Formulaire de connexion : Permet à l'utilisateur de se connecter -->
@@ -31,7 +31,7 @@
         <form th:action="@{/login}" method="post">
             <div><label>Identifiant: <input type="text" name="username"/> </label></div>
             <div><label>Mot de Passe: <input type="password" name="password"/> </label></div>
-            <div><input type="submit" value="Sign In"/></div>
+            <div><input type="submit" value="S'inscrire"/></div>
         </form>
     </body>
 </html>

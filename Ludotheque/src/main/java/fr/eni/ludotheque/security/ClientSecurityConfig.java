@@ -25,7 +25,7 @@ public class ClientSecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
 			.authorizeHttpRequests((requests) -> requests
-				.requestMatchers("/", "/home").permitAll()// Permet l'accès sans authentification aux URLs spécifiées
+				.requestMatchers("/", "/accueil").permitAll()// Permet l'accès sans authentification aux URLs spécifiées
 				
 				//.requestMatchers( "/prive").permitAll("USER")
 				//.requestMatchers( "/prive").hasAnysAuthority("ROLES_USER", "PERMISSION2")
@@ -36,6 +36,7 @@ public class ClientSecurityConfig {
 			.formLogin((form) -> form
 				.loginPage("/login")//  page de connexion personnalisée
 				.permitAll()
+				.defaultSuccessUrl("/accueil", true) // Redirige vers la page d'accueil après la connexion réussie
 			)
 			.logout((logout) -> logout.permitAll());// Permet à tous de se déconnecter
 
@@ -48,14 +49,25 @@ public class ClientSecurityConfig {
 	    }
 	 
 	// Création d'un utilisateur en mémoire (inMemory)
-@Bean
-public UserDetailsService userDetailsService() {
-    var user = User.withUsername("admin")
-                   .password(passwordEncoder().encode("password"))
-                   .roles("ADMIN")// Attribue le rôle ADMIN à l'utilisateur
-                   .build();
-    return new InMemoryUserDetailsManager(user); // Utilise un gestionnaire en mémoire pour les utilisateurs
-}
+	 
+	
+ @Bean
+	 public UserDetailsService userDetailsService() {
+	 var user1 = User.withUsername("zozo")
+             .password(passwordEncoder().encode("password"))
+             .roles("USER") // Rôle USER pour l'utilisateur zozo
+             .build();
+             
+             
+	 var user2 = User.withUsername("admin")
+             .password(passwordEncoder().encode("password"))
+             .roles("ADMIN") // Rôle ADMIN pour l'utilisateur admin
+             .build();
+	 
+	 
+	 
+	 return new InMemoryUserDetailsManager(user1, user2); // Ajout des deux utilisateurs
+ }
 
 
 

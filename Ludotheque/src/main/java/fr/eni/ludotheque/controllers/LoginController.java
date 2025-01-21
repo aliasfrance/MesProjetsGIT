@@ -1,4 +1,4 @@
-package fr.eni.ludotheque.controller;
+package fr.eni.ludotheque.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,12 +10,12 @@ public class LoginController {
     // Page de connexion personnalisée
     @GetMapping("/login")
     public String login() {
-        return "login"; // Assurez-vous que le fichier login.html existe dans le répertoire templates
+        return "login"; 
     }
 
     // Page d'accueil après connexion réussie
-    @RequestMapping("/home")
-    public String home() {
-        return "home"; // Assurez-vous que le fichier home.html existe dans le répertoire templates
+    @RequestMapping("/accueil")
+    public String accueil() {
+        return "accueil"; 
     }
 }
