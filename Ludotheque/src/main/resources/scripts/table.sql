@@ -1,5 +1,6 @@
 
 DROP TABLE IF EXISTS client;
+DROP TABLE IF EXISTS utilisateurs;
 
  create table client(  
     /*id SERIAL NOT NULL PRIMARY KEY, */
@@ -14,9 +15,15 @@ DROP TABLE IF EXISTS client;
 	ville varchar(255)
 	);  
 	
-	
+
 insert into client (id,nom, prenom,email, noTelephone, rue, codePostal, ville)
 values (1, 'Durand', 'Juliette', 'oeu@gmail.com', '0256897840','Impasse Laurie', '44800', 'Saint-Herblain' );	
 
+CREATE TABLE utilisateurs (
+    no_utilisateur SERIAL PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    mot_de_passe VARCHAR(500) NOT NULL,
+    role VARCHAR(255) NOT NULL
+);
 
 select * from client;

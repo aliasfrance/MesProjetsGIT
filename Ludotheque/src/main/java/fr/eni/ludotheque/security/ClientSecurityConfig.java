@@ -48,9 +48,17 @@ public class ClientSecurityConfig {
 	        return new BCryptPasswordEncoder(); // Encodeur pour gérer les mots de passe sécurisés
 	    }
 	 
+	 
+	 
+	 
+	 
+	 //CLASSE DE REMPLACEMENT : GestionUtilisateurDetailsServiceImpl.java
 	// Création d'un utilisateur en mémoire (inMemory)
 	 
-	
+
+	/* 1- changer le @Bean pour le mettre en @Component
+	 * 2- créer sa classe 
+	 * 3- créer la base de données, puis le récupérer sur la base de donné
  @Bean
 	 public UserDetailsService userDetailsService() {
 	 var user1 = User.withUsername("zozo")
@@ -70,9 +78,9 @@ public class ClientSecurityConfig {
  }
 
 
+*/
 
 
-//2. implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.2.RELEASE' 
 
 
 
