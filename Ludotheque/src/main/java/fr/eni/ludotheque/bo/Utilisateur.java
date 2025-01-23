@@ -3,18 +3,16 @@ package fr.eni.ludotheque.bo;
 import java.util.Objects;
 
 public class Utilisateur {
-	
+
 	private Integer noUtilisateur;
 	private String email;
 	private String motDePasse;
 	private String roles;
-	
-	
-	
+
+
 	public Utilisateur() {
 		super();
 	}
-
 
 	public Utilisateur(Integer noUtilisateur, String email, String motDePasse, String roles) {
 		super();
@@ -24,11 +22,9 @@ public class Utilisateur {
 		this.roles = roles;
 	}
 
-
 	public Integer getNoUtilisateur() {
 		return noUtilisateur;
 	}
-
 
 	public void setNoUtilisateur(Integer noUtilisateur) {
 		this.noUtilisateur = noUtilisateur;
@@ -90,5 +86,4 @@ public class Utilisateur {
 		return "Utilisateur [noUtilisateur=" + noUtilisateur + ", email=" + email + ", motDePasse=" + motDePasse
 				+ ", roles=" + roles + "]";
 	}
-	
-	
+}

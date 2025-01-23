@@ -27,3 +27,9 @@ CREATE TABLE utilisateurs (
 );
 
 select * from client;
+
+insert into utilisateurs ( email,  mot_de_passe, role)
+values ('bob', '{bcrypt}$2a$10$8IkbsSIu7.OzSwmIWXhMvexDoLDaY2XUAfBcqmYqFtHpnYmBkWpxq',
+'EMPLOYE'), ('jane', '{bcrypt}$2a$10$8IkbsSIu7.OzSwmIWXhMvexDoLDaY2XUAfBcqmYqFtHpnYmBkWpxq',
+'ADMIN')
+ 

@@ -2,6 +2,7 @@ package fr.eni.ludotheque.dall;
 
 import java.util.Optional;
 
+import fr.eni.ludotheque.bo.Utilisateur;
 import fr.eni.ludotheque.security.GestionUtilisateurDetailsServicImpl;
 
 /**
@@ -11,7 +12,7 @@ import fr.eni.ludotheque.security.GestionUtilisateurDetailsServicImpl;
 
 public interface GestionUtilisateurRepository {
 
-		public Optional <GestionUtilisateurDetailsServicImpl> findByEmail(String email);
+		public Optional <Utilisateur> recupereUtilisateurParEmail(String email);
 	
 	
 	

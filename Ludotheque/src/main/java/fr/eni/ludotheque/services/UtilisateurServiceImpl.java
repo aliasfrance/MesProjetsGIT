@@ -26,7 +26,7 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	@Override
 	public Optional<Utilisateur> recupereUtilisateurParEmail(String email) {
 		// TODO Auto-generated method stub
-		return gestionUtilisateurRepositoryImpl.FindByEmail(email);
+		return gestionUtilisateurRepositoryImpl.recupereUtilisateurParEmail(email);
 	}
 	
 	

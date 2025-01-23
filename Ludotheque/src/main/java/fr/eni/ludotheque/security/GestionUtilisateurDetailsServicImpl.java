@@ -2,6 +2,7 @@ package fr.eni.ludotheque.security;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -16,12 +17,8 @@ import fr.eni.ludotheque.services.UtilisateurService;
 @Service
 public class GestionUtilisateurDetailsServicImpl implements UserDetailsService {
 
-		
+	@Autowired	
 	private UtilisateurService utilisateurService;
-
-	public GestionUtilisateurDetailsServicImpl(GestionUtilisateurDetailsServicImpl gestonsUtilisateur) {
-		this.utilisateurService = utilisateurService;
-	}
 	
 	
 	@Override
@@ -34,6 +31,7 @@ public class GestionUtilisateurDetailsServicImpl implements UserDetailsService {
 
 		Optional<Utilisateur> utilisateurOptionnel = utilisateurService.recupereUtilisateurParEmail(email);
 
+		System.out.println(utilisateurOptionnel.get());
 		UserDetails user = null;
 
 		if (utilisateurOptionnel.isPresent()) {
