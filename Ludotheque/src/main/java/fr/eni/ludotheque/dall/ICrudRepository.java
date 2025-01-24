@@ -1,7 +1,7 @@
 package fr.eni.ludotheque.dall;
 
 
-import fr.eni.ludotheque.bo.Client;
+import fr.eni.ludotheque.bo.Jeu;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,8 +16,7 @@ public interface ICrudRepository<T> {
     void update(T entity);
 
     void delete(int id);
-    
-    //Ajouter un client dans la base de donnée ou modifier si le client a déjà un id
+   
 	void save(T t);
 }
 

@@ -14,6 +14,11 @@ public class Jeu {
 	private int duree;
 	private List<Genre> genres;
 	
+		
+		public Jeu() {
+		super();
+	}
+
 		public Jeu(Integer noJeu, String titre, String reference, String description, Float tarifJournee, int ageMin,
 			int duree, List<Genre> genres) {
 		super();
